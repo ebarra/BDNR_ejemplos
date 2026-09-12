@@ -1,0 +1,98 @@
+[
+  {
+    "matricula": "AL-1001",
+    "nombre": "Estrella Polar",
+    "tripulacion": 6,
+    "tipo": "carguero",
+    "destinos": ["Ceres", "Vesta"]
+  },
+  {
+    "matricula": "BT-2002",
+    "nombre": "Viento Solar",
+    "tripulacion": "5",
+    "tipo": "transporte",
+    "operativa": true,
+    "destinos": ["Luna"]
+  },
+  {
+    "matricula": "CR-3003",
+    "nombre": "Rayo Azul",
+    "tripulacion": 4,
+    "tipo": "minero",
+    "operativa": "si",
+    "destinos": ["Fobos"]
+  },
+  {
+    "matricula": "DK-4004",
+    "nombre": "Centinela",
+    "tripulacion": 8,
+    "tipo": "explorador",
+    "operativa": true,
+    "destinos": ["Ganimedes"],
+    "capitan": "Nerea Vidal"
+  },
+  {
+    "matricula": "EM-5005",
+    "nombre": "Fantasma",
+    "tripulacion": 0,
+    "tipo": "explorador",
+    "operativa": false,
+    "destinos": ["Pluton"]
+  },
+  {
+    "matricula": "FN-6006",
+    "nombre": "Leviatan",
+    "tripulacion": 20,
+    "tipo": "carguero",
+    "operativa": true,
+    "destinos": ["Mercurio", "Venus"]
+  },
+  {
+    "matricula": "GP-7007",
+    "nombre": "Perla Negra",
+    "tripulacion": 5,
+    "tipo": "crucero",
+    "operativa": true,
+    "destinos": ["Encelado"]
+  },
+  {
+    "matricula": "hq-8008",
+    "nombre": "Alba Roja",
+    "tripulacion": 3,
+    "tipo": "minero",
+    "operativa": true,
+    "destinos": ["Io"]
+  },
+  {
+    "matricula": "IR-9009",
+    "nombre": "Ka",
+    "tripulacion": 2,
+    "tipo": "transporte",
+    "operativa": false,
+    "destinos": ["Calisto"]
+  },
+  {
+    "matricula": "JS-1010",
+    "nombre": "Errante",
+    "tripulacion": 9,
+    "tipo": "explorador",
+    "operativa": true,
+    "destinos": ["Triton", 42]
+  },
+  {
+    "matricula": "KT-1111",
+    "nombre": "Doble Filo",
+    "tripulacion": 7,
+    "tipo": "carguero",
+    "operativa": true,
+    "destinos": ["Marte", "Marte"]
+  },
+  {
+    "matricula": "VE-2077",
+    "nombre": "Aurora Boreal",
+    "tripulacion": 7,
+    "tipo": "explorador",
+    "operativa": true,
+    "destinos": ["Marte", "Europa", "Titan"]
+  }
+]
