@@ -1,0 +1,8 @@
+{
+  "matricula": "IR-9009",
+  "nombre": "Ka",
+  "tripulacion": 2,
+  "tipo": "transporte",
+  "operativa": false,
+  "destinos": ["Calisto"]
+}

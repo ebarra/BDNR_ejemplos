@@ -1,12 +1,21 @@
 {
     "productId": 1,
     "productName": "An ice sculpture",
+    "sku": "ICE-0001",
+    "status": "disponible",
     "price": 12.50,
+    "releaseDate": "2023-05-17",
+    "contactEmail": "ventas@acme.example.com",
     "tags": [ "cold", "ice" ],
     "dimensions": {
       "length": 7.0,
       "width": 12.0,
       "height": 9.5
+    },
+    "manufacturer": {
+      "name": "Acme Sculptures",
+      "email": "info@acme.example.com",
+      "foundedDate": "1998-11-02"
     },
     "warehouseLocation": {
       "latitude": -78.75,

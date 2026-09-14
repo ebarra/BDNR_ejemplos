@@ -1,0 +1,8 @@
+{
+  "matricula": "EM-5005",
+  "nombre": "Fantasma",
+  "tripulacion": 0,
+  "tipo": "explorador",
+  "operativa": false,
+  "destinos": ["Pluton"]
+}

@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
-# Valida varios ficheros de datos, cada uno contra su schema de la carpeta schemas/.
+# Valida varios ficheros de datos contra file.schema.json.
 #
-# Dos cosas nuevas respecto a otros ejemplos mas sencillos:
-#   1) Los dos schemas usan versiones distintas de JSON Schema (draft-04 y
-#      2020-12), asi que dejamos que la libreria elija el validador adecuado.
-#   2) file.schema.json hace "$ref" a otro schema (geo.schema.json), asi que
-#      hay que enseñarle a jsonschema donde buscar los ficheros referenciados.
+# El schema muestra varias caracteristicas de JSON Schema:
+#   1) "$ref" a otro fichero (geo.schema.json) para warehouseLocation, asi
+#      que hay que enseñarle a jsonschema donde buscar los ficheros
+#      referenciados.
+#   2) "$defs" con definiciones reutilizables dentro del propio schema
+#      (positiveNumber, manufacturer), referenciadas con "#/$defs/...".
+#   3) "format": "date" y "format": "email", que solo se comprueban si le
+#      pasamos al validador un FormatChecker.
 #
 # Necesita la libreria jsonschema:  pip install jsonschema
 
@@ -16,11 +19,12 @@ import jsonschema
 from referencing import Registry, Resource
 
 CARPETA_SCHEMAS = "schemas"
+FICHERO_SCHEMA = "file.schema.json"
 
-# Que fichero de datos hay que validar contra que schema.
-PAREJAS = [
-    ("example.json", "example.schema.json"),
-    ("file.json", "file.schema.json"),
+# Ficheros de datos que vamos a validar contra ese mismo schema.
+FICHEROS_DATOS = [
+    "file.json",
+    "file_invalido.json",
 ]
 
 
@@ -42,20 +46,25 @@ def buscar_schema(nombre):
 # El "registro" es la agenda donde jsonschema busca los schemas externos.
 registro = Registry(retrieve=buscar_schema)
 
-for fichero_datos, fichero_schema in PAREJAS:
+schema = leer_json(os.path.join(CARPETA_SCHEMAS, FICHERO_SCHEMA))
+
+# file.schema.json usa JSON Schema 2020-12, asi que usamos ese validador
+# directamente. Le pasamos el registro (para el "$ref" externo) y un
+# FormatChecker (para que se comprueben los "format": "date"/"email").
+validador = jsonschema.Draft202012Validator(
+    schema,
+    registry=registro,
+    format_checker=jsonschema.FormatChecker(),
+)
+
+for fichero_datos in FICHEROS_DATOS:
 
     datos = leer_json(fichero_datos)
-    schema = leer_json(os.path.join(CARPETA_SCHEMAS, fichero_schema))
-
-    # validator_for mira el "$schema" del fichero y elige la version correcta
-    # de JSON Schema. Luego creamos el validador pasandole el registro.
-    ClaseValidador = jsonschema.validators.validator_for(schema)
-    validador = ClaseValidador(schema, registry=registro)
 
     # iter_errors devuelve TODOS los errores (lista vacia si el fichero es valido).
     errores = list(validador.iter_errors(datos))
 
-    print(f"{fichero_datos}  (schema: {fichero_schema}, {ClaseValidador.__name__})")
+    print(f"{fichero_datos}  (schema: {FICHERO_SCHEMA})")
 
     if len(errores) == 0:
         print("   VALIDO")

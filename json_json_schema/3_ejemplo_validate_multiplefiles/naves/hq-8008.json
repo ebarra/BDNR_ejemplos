@@ -1,0 +1,8 @@
+{
+  "matricula": "hq-8008",
+  "nombre": "Alba Roja",
+  "tripulacion": 3,
+  "tipo": "minero",
+  "operativa": true,
+  "destinos": ["Io"]
+}

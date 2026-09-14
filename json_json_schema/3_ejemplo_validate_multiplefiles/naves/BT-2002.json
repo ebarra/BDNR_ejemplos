@@ -1,0 +1,8 @@
+{
+  "matricula": "BT-2002",
+  "nombre": "Viento Solar",
+  "tripulacion": "5",
+  "tipo": "transporte",
+  "operativa": true,
+  "destinos": ["Luna"]
+}

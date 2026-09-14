@@ -1,0 +1,8 @@
+{
+  "matricula": "CR-3003",
+  "nombre": "Rayo Azul",
+  "tripulacion": 4,
+  "tipo": "minero",
+  "operativa": "si",
+  "destinos": ["Fobos"]
+}

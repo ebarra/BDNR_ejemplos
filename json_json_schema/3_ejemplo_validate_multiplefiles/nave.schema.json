@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Nave de la flota",
+  "type": "object",
+  "properties": {
+    "matricula": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}-\\d{4}$"
+    },
+    "nombre": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 20
+    },
+    "tripulacion": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12
+    },
+    "tipo": {
+      "type": "string",
+      "enum": ["carguero", "explorador", "transporte", "minero"]
+    },
+    "operativa": {
+      "type": "boolean"
+    },
+    "destinos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": ["matricula", "nombre", "tripulacion", "tipo", "operativa"],
+  "additionalProperties": false
+}

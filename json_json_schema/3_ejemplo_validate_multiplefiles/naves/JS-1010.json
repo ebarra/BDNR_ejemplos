@@ -1,0 +1,8 @@
+{
+  "matricula": "JS-1010",
+  "nombre": "Errante",
+  "tripulacion": 9,
+  "tipo": "explorador",
+  "operativa": true,
+  "destinos": ["Triton", 42]
+}

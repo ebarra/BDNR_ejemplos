@@ -1,0 +1,7 @@
+{
+  "matricula": "AL-1001",
+  "nombre": "Estrella Polar",
+  "tripulacion": 6,
+  "tipo": "carguero",
+  "destinos": ["Ceres", "Vesta"]
+}

@@ -1,0 +1,8 @@
+{
+  "matricula": "GP-7007",
+  "nombre": "Perla Negra",
+  "tripulacion": 5,
+  "tipo": "crucero",
+  "operativa": true,
+  "destinos": ["Encelado"]
+}

@@ -1,0 +1,9 @@
+{
+  "matricula": "DK-4004",
+  "nombre": "Centinela",
+  "tripulacion": 8,
+  "tipo": "explorador",
+  "operativa": true,
+  "destinos": ["Ganimedes"],
+  "capitan": "Nerea Vidal"
+}

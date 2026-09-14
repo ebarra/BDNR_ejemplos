@@ -1,0 +1,8 @@
+{
+  "matricula": "KT-1111",
+  "nombre": "Doble Filo",
+  "tripulacion": 7,
+  "tipo": "carguero",
+  "operativa": true,
+  "destinos": ["Marte", "Marte"]
+}

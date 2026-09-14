@@ -1,0 +1,25 @@
+{
+    "productId": 2,
+    "productName": "Bad product",
+    "sku": "ice-1",
+    "status": "en_oferta",
+    "price": -5,
+    "releaseDate": "17/05/2023",
+    "contactEmail": "no-es-un-email",
+    "tags": [ "sale", "sale" ],
+    "dimensions": {
+      "length": 3.0,
+      "width": -1.0,
+      "height": 2.0
+    },
+    "manufacturer": {
+      "name": "",
+      "email": "sin-arroba.com",
+      "foundedDate": "02-11-1998"
+    },
+    "warehouseLocation": {
+      "latitude": 120,
+      "longitude": 20.4
+    },
+    "discount": 10
+  }

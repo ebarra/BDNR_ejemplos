@@ -1,0 +1,8 @@
+{
+  "matricula": "FN-6006",
+  "nombre": "Leviatan",
+  "tripulacion": 20,
+  "tipo": "carguero",
+  "operativa": true,
+  "destinos": ["Mercurio", "Venus"]
+}

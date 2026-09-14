@@ -1,0 +1,96 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "file.schema.json",
+    "title": "Product",
+    "description": "A product from Acme's catalog",
+    "type": "object",
+
+    "$defs": {
+      "positiveNumber": {
+        "type": "number",
+        "exclusiveMinimum": 0
+      },
+      "manufacturer": {
+        "type": "object",
+        "description": "Fabricante del producto",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "foundedDate": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "required": [ "name", "email" ],
+        "additionalProperties": false
+      }
+    },
+
+    "properties": {
+      "productId": {
+        "description": "The unique identifier for a product",
+        "type": "integer"
+      },
+      "productName": {
+        "description": "Name of the product",
+        "type": "string"
+      },
+      "sku": {
+        "description": "Stock Keeping Unit",
+        "type": "string",
+        "pattern": "^[A-Z]{3}-\\d{4}$"
+      },
+      "status": {
+        "description": "Situacion del producto en el catalogo",
+        "type": "string",
+        "enum": [ "disponible", "agotado", "descatalogado" ]
+      },
+      "price": {
+        "description": "The price of the product",
+        "$ref": "#/$defs/positiveNumber"
+      },
+      "releaseDate": {
+        "description": "Fecha en la que el producto salio a la venta",
+        "type": "string",
+        "format": "date"
+      },
+      "contactEmail": {
+        "description": "Email de contacto para pedidos de este producto",
+        "type": "string",
+        "format": "email"
+      },
+      "tags": {
+        "description": "Tags for the product",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 1,
+        "uniqueItems": true
+      },
+      "dimensions": {
+        "type": "object",
+        "properties": {
+          "length": { "$ref": "#/$defs/positiveNumber" },
+          "width": { "$ref": "#/$defs/positiveNumber" },
+          "height": { "$ref": "#/$defs/positiveNumber" }
+        },
+        "required": [ "length", "width", "height" ]
+      },
+      "manufacturer": {
+        "$ref": "#/$defs/manufacturer"
+      },
+      "warehouseLocation": {
+        "description": "Coordinates of the warehouse where the product is located.",
+        "$ref": "geo.schema.json"
+      }
+    },
+    "required": [ "productId", "productName", "price" ],
+    "additionalProperties": false
+  }

@@ -1,0 +1,8 @@
+{
+  "matricula": "VE-2077",
+  "nombre": "Aurora Boreal",
+  "tripulacion": 7,
+  "tipo": "explorador",
+  "operativa": true,
+  "destinos": ["Marte", "Europa", "Titan"]
+}
